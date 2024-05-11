@@ -1,20 +1,27 @@
-function sumarElementosCadena(cadenaNumeros)
-{
-    let resultado=0;
-    if(cadenaNumeros.length==1)
-    {
-        return cadenaNumeros[0];
+function sumarElementosCadena(cadenaNumeros) {
+    let resultado = 0;
+    let contieneLetras = false;
+
+    for (let i = 0; i < cadenaNumeros.length; i++) {
+        if (esLetra(cadenaNumeros[i])) {
+            contieneLetras = true;
+            break;
+        } else {
+            resultado = resultado+ cadenaNumeros[i];
+        }
     }
-    else
-    {
-        for(let i=0;i<cadenaNumeros.length;i++)
-            {
-                resultado=resultado+cadenaNumeros[i];
-            }
-            return resultado;
+
+    if (contieneLetras) {
+        return "no se puede sumar letras";
+    } else {
+        return resultado;
     }
-   
-    return 0;
-    
 }
+
+  
+
+function esLetra(elemento) {
+    return /^[a-zA-Z]$/.test(elemento);
+}
+
 export default sumarElementosCadena;

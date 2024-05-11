@@ -20,7 +20,8 @@ form.addEventListener("submit", (event) => {
   console.log(cadenaLimpia);
   
   let array = cadenaLimpia.split(expresionRegular).map(Number).filter(Boolean);
-  console.log(array);
-  div.innerHTML = "<p>" + sumarElementosCadena(array) + "</p>";
+  console.log(array[0]);
+  let resultado=sumarElementosCadena(array);
+  div.innerHTML = "<p>" + resultado + "</p>";
  // div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
 });
