@@ -8,7 +8,8 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const firstNumber = first.value;
-  console.log(firstNumber);
-  div.innerHTML = "<p>" + sumarElementosCadena(firstNumber) + "</p>";
+  let array=firstNumber.split(",").map(Number);
+  console.log(array);
+  div.innerHTML = "<p>" + sumarElementosCadena(array) + "</p>";
  // div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
 });

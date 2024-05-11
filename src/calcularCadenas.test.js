@@ -9,4 +9,10 @@ describe("Sumar", () => {
     cadenaNumeros.push(5);
     expect(sumarElementosCadena(cadenaNumeros)).toEqual(5);
   });
+  it("deberia devolver la suma de 2 numeros en caso de que la cadena tenga 2 numeros ingresados", () => {
+    let cadenaNumeros=[]
+    cadenaNumeros.push(5);
+    cadenaNumeros.push(5);
+    expect(sumarElementosCadena(cadenaNumeros)).toEqual(10);
+  });
 });
