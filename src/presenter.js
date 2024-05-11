@@ -8,7 +8,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const firstNumber = first.value;
-  let array=firstNumber.split(",").map(Number);
+  let array=firstNumber.split(/[\s,-]+/).map(Number);
   console.log(array);
   div.innerHTML = "<p>" + sumarElementosCadena(array) + "</p>";
  // div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
