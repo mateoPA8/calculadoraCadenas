@@ -8,7 +8,18 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const firstNumber = first.value;
-  let array=firstNumber.split(/[\s,-]+/).map(Number);
+
+
+  let delimitador = firstNumber.match(/(?<=\[).(?=\])/)[0];
+  console.log(delimitador);
+  
+  // Escapar caracteres especiales en la expresión regular
+  let expresionRegular = new RegExp(`[${delimitador}\\s]*`, 'g');
+  
+  let cadenaLimpia = firstNumber.replace(/[\[\]\s]/g, '');
+  console.log(cadenaLimpia);
+  
+  let array = cadenaLimpia.split(expresionRegular).map(Number).filter(Boolean);
   console.log(array);
   div.innerHTML = "<p>" + sumarElementosCadena(array) + "</p>";
  // div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";

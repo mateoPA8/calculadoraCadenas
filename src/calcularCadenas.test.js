@@ -15,4 +15,12 @@ describe("Sumar", () => {
     cadenaNumeros.push(5);
     expect(sumarElementosCadena(cadenaNumeros)).toEqual(10);
   });
+  it("deberia devolver la suma de los numeros sin importar el delimitador", () => {
+    let cadenaNumeros=[]
+    cadenaNumeros.push(5);
+    cadenaNumeros.push(5);
+    cadenaNumeros.push(5);
+    cadenaNumeros.push(5);
+    expect(sumarElementosCadena(cadenaNumeros)).toEqual(20);
+  });
 });
