@@ -7,7 +7,7 @@ function sumarElementosCadena(cadenaNumeros) {
             contieneLetras = true;
             break;
         } else {
-            resultado = resultado+ cadenaNumeros[i];
+            resultado += Number(cadenaNumeros[i]);
         }
     }
 
