@@ -1,27 +1,11 @@
 function sumarElementosCadena(cadenaNumeros) {
+    let expresionRegular = /[,\s:;-]+/;
+    let array = cadenaNumeros.split(expresionRegular).map(Number);
     let resultado = 0;
-    let contieneLetras = false;
-
-    for (let i = 0; i < cadenaNumeros.length; i++) {
-        if (esLetra(cadenaNumeros[i])) {
-            contieneLetras = true;
-            break;
-        } else {
-            resultado += Number(cadenaNumeros[i]);
-        }
-    }
-
-    if (contieneLetras) {
-        return "no se puede sumar letras";
-    } else {
-        return resultado;
-    }
-}
-
-  
-
-function esLetra(elemento) {
-    return /^[a-zA-Z]$/.test(elemento);
+    for (let i = 0; i < array.length; i++) {
+        resultado += array[i];
+    } 
+    return resultado;
 }
 
 export default sumarElementosCadena;
