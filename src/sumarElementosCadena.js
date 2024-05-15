@@ -3,13 +3,13 @@ function sumarElementosCadena(cadenaNumeros)
     let delimitador = ',';
     let expresionRegular = /[,\s:;-]+/;
     let cadenaSinDelimitador=sacarDelimitadorDeLaCadena(cadenaNumeros,delimitador);
-    let array = convertirCadenaComoNumerosEnUnArray(cadenaSinDelimitador,expresionRegular);
+    let numerosParaSumar = convertirCadenaComoNumerosEnUnArray(cadenaSinDelimitador,expresionRegular);
     let resultado = 0;
-    for (let i = 0; i < array.length; i++)
+    for (let posicion = 0; posicion < numerosParaSumar.length; posicion++)
     {
-        if (array[i] < 1000) 
+        if (numerosParaSumar[posicion] < 1000) 
         {
-            resultado += array[i];
+            resultado += numerosParaSumar[posicion];
         }
     }
     return resultado;
