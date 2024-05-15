@@ -13,5 +13,7 @@ describe("Sumar", () => {
   it("deberia devolver la suma de los numeros sin importar el delimitador", () => {
     expect(sumarElementosCadena("5,5,5-5")).toEqual(20);
   });
-  
+  it("deberia devolver la suma de los numeros sin tomar en cuenta los numeros mayores a 1000", () => {
+    expect(sumarElementosCadena("5,5,5,1000,5,1001")).toEqual(20);
+  });
 });
